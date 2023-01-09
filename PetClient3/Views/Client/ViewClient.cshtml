@@ -1,0 +1,26 @@
+﻿@model Client
+
+<h3>@Model.FullName Information</h3>
+
+<table class="table">
+    <tr>
+        <th>Customer ID</th>
+        <th>Full Name</th>
+        <th>Phone Number</th>
+        <th>Email Address</th>
+
+    </tr>
+    <tr>
+        <td>@Model.ID</td>
+        <td>@Model.FullName</td>
+        <td>@Model.Phone</td>
+        <td>@Model.Email</td>
+
+    </tr>
+
+</table>
+
+<div style="display: block">
+    <a href="/Client/UpdateClient/@Model.ID">Update this Client</a>
+</div>
+

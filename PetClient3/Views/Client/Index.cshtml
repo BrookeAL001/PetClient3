@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Client>
+
+    <h2>Clients</h2>
+
+    <div style="display: block">
+    <a href="/Client/InsertClient/">Create a New Client</a>
+</div>
+
+    <table class= "table">
+        <tr>
+            <th>Id</th>
+            <th>FullName</th>
+            <th>Email</th>
+            <th>Phone</th>
+
+        </tr>
+        
+        @foreach (var client in Model)
+        {
+            <tr>
+            <td><a href=/Client/ViewClient/@client.ID>@client.ID</a></td>
+                <td>@client.FullName</td>
+                <td>@client.Email</td>
+                <td>@client.Phone</td>
+            </tr>
+            
+        }
+    </table>

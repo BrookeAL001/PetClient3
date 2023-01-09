@@ -1,0 +1,23 @@
+﻿@model Client
+
+<h2>Update @Model.FullName</h2>
+
+@using (Html.BeginForm("UpdateClientToDatabase", "Client", "Post"))
+{
+        <input asp-for="ID" type="hidden" value="@Model.ID" />
+
+        <label asp-for="FullName" class="control-label">FullName</label>
+
+        <input type="text" name="Full Name" class="form-control" value="@Model.FullName" />
+
+        <label asp-for="Phone" class="control-label">Phone</label>
+
+        <input type="number" step="0.01" name="Phone Number" class="form-control" value="@Model.Phone" />
+
+        <label asp-for="Email" class="control-label">Email</label>
+
+        <input type="number" step="0.01" name="Email Address" class="form-control" value="@Model.Email" />
+
+        <input type="submit" value="Update Product" class="btn btn-primary" />
+
+}
