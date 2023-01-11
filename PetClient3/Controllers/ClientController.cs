@@ -25,16 +25,18 @@ namespace Testing.Controllers
             return View(clients);
         }
 
-        public IActionResult ViewClient(int id)
+        public IActionResult ViewClient(int clientId)
         {
-            var client = repo.GetClient(id);
+            var client = repo.GetClient(clientId);
 
             return View(client);
         }
 
-        public IActionResult UpdateClient(int id)
+        public IActionResult UpdateClient(Client client)
         {
-            Client cli = repo.GetClient(id);
+            Client cli = repo.GetClient(client.ClientId);
+
+            repo.UpdateClient(cli);
 
             if (cli == null)
             {
@@ -48,12 +50,14 @@ namespace Testing.Controllers
         {
             repo.UpdateClient(client);
 
-            return RedirectToAction("ViewClient", new { id = client.ID });
+            return RedirectToAction("ViewClient", new { clientId = client.ClientId });
         }
 
-        public IActionResult InsertClient()
+        public IActionResult InsertClient(Client clientToInsert)
         {
+            Client cli = repo.InsertClient(client.ClientId);
             
+            repo.InsertClient(cli);
 
             return View();
 
